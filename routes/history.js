@@ -1,10 +1,8 @@
-const express = require('express')
-const { getHistory } = require('../middleware/historySave')
+const express = require('express');
+const { getHistory } = require('../controllers/getHistory');
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/',getHistory)
+router.get('/', getHistory);
 
-
-
-module.exports=router
+module.exports = router;

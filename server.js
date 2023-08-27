@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 
-const history=require('./routes/history')
+const history=require('./routes/history');
+const { evalExpression } = require('./controllers/getOperations');
 
 require('dotenv').config()
 
@@ -33,6 +34,12 @@ app.get('/', (req, res) => {
         </ul>
     `);
 });
+
+// app.get('/*', (req, res) => {
+
+// });
+
+app.get('/*',evalExpression)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
