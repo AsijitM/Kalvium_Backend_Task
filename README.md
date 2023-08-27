@@ -10,7 +10,15 @@ Created a server that responds to mathematical operations sent via URL. it also 
 - Quick JSON responses
 - easy examples to get started quickly
 
+## Installation
 
+Install my-project with npm
+
+```bash
+  git clone https://github.com/AsijitM/Kalvium_Backend_Task.git
+  npm install
+  npm start
+```
 
 ## Teck Stack
 
