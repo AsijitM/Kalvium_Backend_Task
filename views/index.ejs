@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalvium Task</title>
+    </head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 12px;
+        }
+    </style>
+
+    <body>
+        <br>
+        <%- include('common/Header')%>
+
+        <h1>Get Your Operations Done Simple</h1>
+
+        <h3>Math API</h3>
+
+        <button><a href="/history" style="text-decoration: none; color:blue"> Get Your History</a></button>
+        </br>
+        </br>
+        <table style="width:100%">
+            <tr>
+                <td>Example No.</td>
+                <td>GET request</td>
+                <td>Response</td>
+            </tr>
+            <tr>
+                <td>01.</td>
+                <td><a href="/5/plus/3">/5/plus/3</a></td>
+                <td> JSON </br>
+                    {question:”5+3”,answer: 8}
+                </td>
+            </tr>
+            <tr>
+                <td>02.</td>
+                <td><a href="/5/minus/3/plus/8">/5/minus/3/plus/8</a></td>
+                <td> JSON</br>
+                    {question:”3-5+8”, answer: 6}
+                </td>
+            </tr>
+            <tr>
+                <td>03.</td>
+                <td><a href="/3/into/5/plus/8/into/6">/3/into/5/plus/8/into/6</a></td>
+                <td> JSON</br>
+                    {question:”3*5+8*6”, answer: 63}
+                </td>
+            </tr>
+        </table>
+    </body>
+
+</html>

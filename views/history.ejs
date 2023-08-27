@@ -1,0 +1,21 @@
+<h1>
+    Operations History
+</h1>
+
+<% if(operations.length) { %>
+    <!-- <% for(let op in operations){ %>
+        <h2>
+            <%= op.question %>
+        </h2> -->
+
+        <ul>
+            <% for (item of operations) { %>
+                <li>
+                    <%= item.question %>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
+            <% }else { %>
+                <h2>You haven't performed any Operations</h2>
+                <%}%>

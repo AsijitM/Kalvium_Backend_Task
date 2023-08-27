@@ -43,9 +43,11 @@ app.get('/history', (req, res) => {
     (entry) => `${entry.question} = ${entry.answer}`
   );
   res.send(
-    `<h1>Operations History</h1><ul>${historyList
+    `<h1>Operations History</h1>
+    <ul>${historyList
       .map((item) => `<li>${item}</li>`)
-      .join('')}</ul>`
+      .join('')}
+      </ul>`
   );
 });
 
