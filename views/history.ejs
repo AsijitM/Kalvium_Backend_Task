@@ -1,29 +1,22 @@
 </br>
 
-<head>
-    <title>
-        Kalvium Task
-    </title>
-</head>
-
-
 <%- include('common/Header')%>
 
-    <h1>
-        Operations You have Performed Recently
-    </h1>
+<h1>
+    Operations You have Performed Recently
+</h1>
 
-    <% if(operations.length) { %>
-        <p style="font-weight: bold;"> (Stores upto 20)</p>
-        <ul>
-            <% for (item of operations) { %>
-                <li style=" list-style-type: circle">
-                    <%= item %>
-                </li>
-                <% } %>
-        </ul>
-        <% }else { %>
-            <h2>You haven't performed any Operations</h2>
-            <%}%>
+<% if(operations.length) { %>
+    <p style="font-weight: bold;"> (Stores upto 20)</p>
+    <ul>
+        <% for (item of operations) { %>
+            <li style=" list-style-type: circle">
+                <%= item %>
+            </li>
+            <% } %>
+    </ul>
+    <% }else { %>
+        <h2>You haven't performed any Operations</h2>
+        <%}%>
 
-                <%- include('common/footer')%>
+        <%- include('common/footer')%>
