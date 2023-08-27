@@ -4,6 +4,7 @@ const getHistory = (req, res) => {
   const historyList = operationsHistory.map(
     (entry) => `${entry.question} = ${entry.answer}`
   );
+  historyList.reverse()
 
   const historyData = {
     operations: historyList
