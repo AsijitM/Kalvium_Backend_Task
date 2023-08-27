@@ -1,6 +1,8 @@
 const operationsHistory = [];
 
 function evaluateExpression(expression) {
+
+  // Enum concept used
   const operators = {
     plus: '+',
     minus: '-',
@@ -8,26 +10,25 @@ function evaluateExpression(expression) {
     // Add more operators if needed
   };
 
-  const cleanExpression = expression.replace(
+  // using regex to extract the expression
+  const expExtract = expression.replace(
     /\/(plus|minus|into)\//g,
-    (match, operator) => operators[operator]
+    (operator) => operators[operator]
   );
-  const result = eval(cleanExpression);
+  // eval() evaluates the operation
+  const result = eval(expExtract);
   return result;
 }
 
 const evalExpression = (req, res) => {
   const operationString = req.params[0];
   const operationParts = operationString.split('/');
-  // operationString = operationString.replace('plus', '+');
-  // console.log(operationString);
-  // console.log(operationParts);
-  // const ans= evaluateExpression(operationString);
-  // console.log(ans);
 
   try {
+    // calling the function
     answer = evaluateExpression(operationString);
     question = operationParts.join('');
+    // modifying for JSON readability
     question = question
       .replaceAll('plus', '+')
       .replaceAll('into', '*')
@@ -37,6 +38,7 @@ const evalExpression = (req, res) => {
     return;
   }
 
+  // getting the history generated upto 20 entries
   const historyEntry = { question, answer };
   operationsHistory.unshift(historyEntry);
   if (operationsHistory.length > 20) {
@@ -47,6 +49,6 @@ const evalExpression = (req, res) => {
 };
 
 module.exports = {
-    evalExpression,
-    operationsHistory
+  evalExpression,
+  operationsHistory,
 };

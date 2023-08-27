@@ -1,10 +1,13 @@
 const { operationsHistory } = require("./getOperations");
 
+// function to collect the History from the server
 const getHistory = (req, res) => {
   const historyList = operationsHistory.map(
     (entry) => `${entry.question} = ${entry.answer}`
   );
+  // reversing the list so that it gets in a order
   historyList.reverse()
+
 
   const historyData = {
     operations: historyList
@@ -15,6 +18,8 @@ const getHistory = (req, res) => {
   //     .join('')}</ul>`
   // );
 
+
+  // rendering the ejs file
   res.render('history',historyData)
 };
 
